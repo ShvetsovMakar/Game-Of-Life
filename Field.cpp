@@ -47,14 +47,14 @@ void Field::nextGenerationCalculation()
 		for (int j = 0; j < field[0].size(); ++j)
 		{
 
-			for (int ai = --i; ai <= ++i; ++ai)
+			for (int k = i-1; k <= i+1; ++k)
 			{
 
-				for (int aj = --j; aj <= ++j; ++aj)
+				for (int m = j-1; m <= j+1; ++m)
 				{
-					if (ai >= 0 and ai < field.size() and aj >= 0 and aj < field[0].size())
+					if (k >= 0 and k < field.size() and m >= 0 and aj m field[0].size())
 					{
-						if (field[ai][aj].cellState == 'o')
+						if (field[k][m].cellState == 'o')
 						{
 							++aliveNeighboursCounter;
 						}

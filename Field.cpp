@@ -4,15 +4,6 @@
 
 void Field::firstGenerationSetup()
 {
-	for (int i = 0; i < 10; ++i)
-	{
-		field.push_back(vector <Cell>);
-		for (int j = 0; j < 10; ++)
-		{
-			field[i].push_back(Cell);
-		}
-	}
-	
 	while (true)
 	{
 		cout << "Row number of position of alive cell: ";

@@ -52,7 +52,7 @@ void Field::nextGenerationCalculation()
 
 				for (int m = j-1; m <= j+1; ++m)
 				{
-					if (k >= 0 and k < field.size() and m >= 0 and aj m field[0].size())
+					if (k >= 0 and k < field.size() and m >= 0 and m < field[0].size())
 					{
 						if (field[k][m].cellState == 'o')
 						{

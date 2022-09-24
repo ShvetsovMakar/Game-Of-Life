@@ -1,7 +1,5 @@
 #include "Field.h"
 
-// class Field
-
 // functions
 
 void Field::firstGenerationSetup()
@@ -14,6 +12,7 @@ void Field::firstGenerationSetup()
 
 		if (aliveCellRow >= field.size() or aliveCellRow < 0)
 		{
+			cout << "There's no such cell!" << endl;
 			continue;
 		}
 
@@ -23,12 +22,13 @@ void Field::firstGenerationSetup()
 
 		if (aliveCellColumn >= field[0].size() or aliveCellColumn < 0)
 		{
+			cout << "There's no such cell!" << endl;
 			continue;
 		}
 
 		field[aliveCellRow][aliveCellColumn].cellState = 'o';
 
-		cout << "Do you want to create more alive cells?(type + if you do): ";
+		cout << "Do you want to create another alive cell? Type + if you do: ";
 
 		cin >> newAliveCell;
 
@@ -100,13 +100,4 @@ void Field::fieldDisplay()
 	}
 
 	cout << "\t ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
-}
-
-// class Cell
-
-// class constructor
-
-Field::Cell::Cell(char cellState)
-{
-	this->cellState = cellState;
 }

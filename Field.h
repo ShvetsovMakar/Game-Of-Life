@@ -17,14 +17,6 @@ private:
 	};
 
 	vector <vector <Cell>> field;
-	for (int i = 0; i < 10; ++i)
-	{
-		field.push_back(vector <Cell>);
-		for (int j = 0; j < 10; ++)
-		{
-			field[i].push_back(Cell);
-		}
-	}
 			
 	char newAliveCell;
 	int aliveNeighboursCounter = 0;

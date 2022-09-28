@@ -13,7 +13,8 @@ private:
 	{
 		
 	public:
-		char cellState = '.';
+		char cellState;
+		Cell(char cellState);
 	};
 
 	vector <vector <Cell>> field = {vector <Cell> {Cell('.'), Cell('.'), Cell('.'), Cell('.'), Cell('.'), Cell('.'), Cell('.'), Cell('.'), Cell('.'), Cell('.')},

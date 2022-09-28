@@ -4,6 +4,7 @@ Field field;
 
 int main()
 {
+	char showNextGeneration;
 	field.firstGenerationSetup();
 	field.fieldDisplay();
 
@@ -11,6 +12,14 @@ int main()
 	{
 		field.nextGenerationCalculation();
 		field.fieldDisplay();
+		
+		cout << "Do you want to see next generation? Type + if you do: ";
+		cin >> showNextGeneration;
+		
+		if (showNextGeneration != '+')
+		{
+			break;
+		}	
 	}
 
 	return 0;

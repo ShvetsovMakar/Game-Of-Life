@@ -1,5 +1,6 @@
 #include "Field.h"
 
+// class Field
 // functions
 
 void Field::firstGenerationSetup()
@@ -100,4 +101,12 @@ void Field::fieldDisplay()
 	}
 
 	cout << "\t ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
+}
+
+// class Cell
+// class constructor
+
+Field::Cell::Cell(char cellState)
+{
+	this->cellState = cellState;
 }

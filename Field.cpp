@@ -86,7 +86,7 @@ void Field::nextGenerationCalculation()
 
 void Field::fieldDisplay()
 {
-	cout << "\t _____________________\n";
+	cout << "\t ---------------------\n";
 
 	for (int i = 0; i < field.size(); ++i)
 	{
@@ -100,7 +100,7 @@ void Field::fieldDisplay()
 		cout << "|\n";
 	}
 
-	cout << "\t ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n";
+	cout << "\t ---------------------\n";
 }
 
 // class Cell

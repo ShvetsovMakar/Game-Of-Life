@@ -5,6 +5,7 @@ Field field;
 int main()
 {
 	char showNextGeneration;
+	char closeTab;
 	field.firstGenerationSetup();
 	field.fieldDisplay();
 
@@ -21,6 +22,16 @@ int main()
 			break;
 		}	
 	}
-
+	
+	while (true)
+	{
+		cout << "Do you want to leave the game? Type + if you do" << endl;
+		cin >> closeTab;
+		
+		if (closeTab == '+')
+		{
+			break;
+		}
+	}
 	return 0;
 }

@@ -25,7 +25,7 @@ int main()
 	
 	while (true)
 	{
-		cout << "Do you want to leave the game? Type + if you do" << endl;
+		cout << "Do you want to leave the game? Type + if you do: ";
 		cin >> closeTab;
 		
 		if (closeTab == '+')

@@ -11,7 +11,7 @@ void Field::firstGenerationSetup()
 		cin >> aliveCellRow;
 		aliveCellRow--;
 
-		if (aliveCellRow >= field.size() or aliveCellRow < 0)
+		if (aliveCellRow >= currentGenerationField.size() or aliveCellRow < 0)
 		{
 			cout << "There's no such cell!" << endl;
 			continue;
@@ -21,13 +21,13 @@ void Field::firstGenerationSetup()
 		cin >> aliveCellColumn;
 		aliveCellColumn--;
 
-		if (aliveCellColumn >= field[0].size() or aliveCellColumn < 0)
+		if (aliveCellColumn >= currentGenerationField[0].size() or aliveCellColumn < 0)
 		{
 			cout << "There's no such cell!" << endl;
 			continue;
 		}
 
-		field[aliveCellRow][aliveCellColumn].cellState = 'o';
+		currentGenerationField[aliveCellRow][aliveCellColumn].cellState = 'o';
 
 		cout << "Do you want to create another alive cell? Type + if you do: ";
 
@@ -42,10 +42,10 @@ void Field::firstGenerationSetup()
 
 void Field::nextGenerationCalculation()
 {
-	for (int i = 0; i < field.size(); ++i)
+	for (int i = 0; i < currentGenerationField.size(); ++i)
 	{
 
-		for (int j = 0; j < field[0].size(); ++j)
+		for (int j = 0; j < currentGenerationField[0].size(); ++j)
 		{
 			aliveNeighboursCounter = 0;
 
@@ -54,9 +54,9 @@ void Field::nextGenerationCalculation()
 
 				for (int m = j-1; m <= j+1; ++m)
 				{
-					if (k >= 0 and k < field.size() and m >= 0 and m < field[0].size())
+					if (k >= 0 and k < currentGenerationField.size() and m >= 0 and m < currentGenerationField[0].size())
 					{
-						if (field[k][m].cellState == 'o')
+						if (currentGenerationField[k][m].cellState == 'o')
 						{
 							++aliveNeighboursCounter;
 						}
@@ -64,16 +64,17 @@ void Field::nextGenerationCalculation()
 				}
 			}
 
-			if (field[i][j].cellState == 'o')
+			if (currentGenerationField[i][j].cellState == 'o')
 			{
 				--aliveNeighboursCounter;
 
 				if (aliveNeighboursCounter != 2 and aliveNeighboursCounter != 3)
 				{
-					field[i][j].cellState = '.';
+					newGenerationField[i][j].cellState = '.';
 				}
-				else {
-					field[i][j].cellState == 'o';
+				else 
+				{
+					newGenerationField[i][j].cellState = 'o';
 				}
 			}
 
@@ -81,12 +82,18 @@ void Field::nextGenerationCalculation()
 			{
 				if (aliveNeighboursCounter == 3)
 				{
-					field[i][j].cellState == 'o';
+					newGenerationField[i][j].cellState = 'o';
 				}
-				else {
-					field[i][j].cellState = '.';
+				else 
+				{
+					newGenerationField[i][j].cellState = '.';
 				}
 			}
+		}
+	}
+	for (int i = 0; i < currentGenerationField.size(); i++) {
+		for (int j = 0; j < currentGenerationField[0].size(); j++) {
+			currentGenerationField[i][j] = newGenerationField[i][j];
 		}
 	}
 }
@@ -95,13 +102,13 @@ void Field::fieldDisplay()
 {
 	cout << "\t ---------------------\n";
 
-	for (int i = 0; i < field.size(); ++i)
+	for (int i = 0; i < currentGenerationField.size(); ++i)
 	{
 		cout << "\t| ";
 
-		for (int j = 0; j < field[0].size(); ++j)
+		for (int j = 0; j < currentGenerationField[0].size(); ++j)
 		{
-			cout << field[i][j].cellState << ' ';
+			cout << currentGenerationField[i][j].cellState << ' ';
 		}
 
 		cout << "|\n";

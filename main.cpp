@@ -22,7 +22,6 @@ int main()
 			break;
 		}	
 	}
-	
 	while (true)
 	{
 		cout << "Do you want to leave the game? Type + if you do: ";

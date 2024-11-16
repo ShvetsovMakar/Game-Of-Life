@@ -47,6 +47,7 @@ void Field::nextGenerationCalculation()
 
 		for (int j = 0; j < field[0].size(); ++j)
 		{
+			aliveNeighboursCounter = 0;
 
 			for (int k = i-1; k <= i+1; ++k)
 			{
@@ -71,6 +72,9 @@ void Field::nextGenerationCalculation()
 				{
 					field[i][j].cellState = '.';
 				}
+				else {
+					field[i][j].cellState == 'o';
+				}
 			}
 
 			else
@@ -78,6 +82,9 @@ void Field::nextGenerationCalculation()
 				if (aliveNeighboursCounter == 3)
 				{
 					field[i][j].cellState == 'o';
+				}
+				else {
+					field[i][j].cellState = '.';
 				}
 			}
 		}
